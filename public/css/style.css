@@ -1,0 +1,145 @@
+
+body{
+    height: 100vh;
+    height: 100%;
+    background-image: url("../img/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+   
+
+}
+
+#logo{
+    width: 80px;
+
+}
+body{
+    width: 100%;
+    position: relative;
+}
+header{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+.row{
+    margin: 0;
+}
+.container-fluid{
+    padding: 0;
+    
+}
+
+
+
+.btn-primary{
+   
+    width: 110px;
+    height: 50px;
+    border-radius: 10px;
+    color: #fff;
+}
+.btn-primary:hover{
+    background-color: #0a1e9c;
+    border: 2px solid #0a1e9c;
+}
+
+#navbar{
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 5px 0;
+}
+#navbar a{
+    font-size: 14px;
+    color: #757575;
+}
+#navbar a:hover{
+    font-size: 14px;
+    color: #222120;
+}
+
+#search-container{
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    text-align: center;
+
+}
+#search-container form{
+    width: 50%;
+    margin: 0 auto;
+
+}
+
+#events-container img{
+    max-height: 230px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+
+#title-buscar{
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 05px;
+}
+
+
+#event-create-container{
+    padding: 30px;
+}
+#event-create-container label{
+    font-weight: bold;
+}
+
+.msg{
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+}
+#image-container img{
+    border-radius: 10px;
+}
+#info-container h1{
+    font-size: 36px;
+    font-weight: 900;
+
+}
+#info-container p{
+  margin: 3px;
+  font-size: 14px;
+  display: flex;
+
+}
+#info-container h3,
+#dsecription h4{
+    font-size: 20px;
+    color: #353535;
+    margin-right: 5px;
+}
+
+#info-container ion-icons{
+    margin: 3px;
+    color: #353535;
+    margin-right: 5px;
+
+}
+
+
+
+.dashboard-interna{
+    margin-top: 30px;
+    background-color: #d0d0d0;
+    opacity: 0.8;
+    margin-bottom: 30px;
+
+}
+#duracao{
+    
+
+}
