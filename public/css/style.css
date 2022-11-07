@@ -139,7 +139,12 @@ header{
     margin-bottom: 30px;
 
 }
-#duracao{
-    
+.faixa ul {
+	display: flex;
+        justify-content: left;
+}
 
+.faixa ul li {
+	list-style-type: none;
+    padding-right: 14px;
 }

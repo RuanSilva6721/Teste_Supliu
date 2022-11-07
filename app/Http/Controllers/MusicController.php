@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Music;
 use Illuminate\Http\Request;
+use App\Models\Album;
 
 class MusicController extends Controller
 {
@@ -16,6 +17,7 @@ class MusicController extends Controller
     {
 
         $search = request('search');
+        $album = Album::all();
 
         if($search){
 
@@ -29,7 +31,7 @@ class MusicController extends Controller
              $musics = Music::all();
         }
 
-        return  view('music.dashboard', [ "search" => $search, 'musics' => $musics ]);
+        return  view('music.dashboard', [ "search" => $search, 'musics' => $musics, 'album' => $album ]);
     }
 
 
@@ -79,14 +81,14 @@ class MusicController extends Controller
         Music::findOrFail($request->id)->update($data);
 
 
-        return redirect('/')->with('msg', "Evento editado com sucesso!");
+        return redirect('/')->with('msg', "Música editado com sucesso!");
     }
 
     public function destroy($id)
     {
         Music::findOrFail($id)->delete();
 
-        return redirect('/')->with('msg', "Evento excluido com sucesso!");
+        return redirect('/')->with('msg', "Música excluido com sucesso!");
     }
 
 

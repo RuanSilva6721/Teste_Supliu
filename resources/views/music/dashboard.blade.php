@@ -24,7 +24,7 @@
                 <li class="nav-item">
                     <a href="/create/album" class="nav-link">Criar Album</a>
                 </li>
-         
+
 
             </ul>
 
@@ -46,27 +46,44 @@
         @endif
 
 
-     @if(count($musics) > 0)
+     @if(count($musics) > 0 || count($album) > 0)
+     @foreach($album as $item)
+     <div class="faixa">
+     <ul >
+        <li><h3>Album: {{$item->nome}}</h3></li>
+        <li><a href="/editalbum/{{$item->id}}" class="btn btn-info edit-btn"> <ion-icons name="create-ouyline"></ion-icons> Editar</a></li>
+        <li>   <form action="/album/{{$item->id}}" method="POST">
+            @csrf
+            @method('DELETE')
+
+            <button type="submit" class="btn btn-danger delete-btn"> <ion-icons name="trash-outline"></ion-icons> Deletar</button>
+         </form></li>
+
+     </ul>
+    </div>
+       
+            
+     @endforeach
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">Nº</th>
-                    <th scope="col">Nome</th>                 
+                    <th scope="col">Nome</th>
                     <th scope="col">Editar</th>
                     <th scope="col">Deletar</th>
                     <th scope="col">duração</th>
                 </tr>
             </thead>
             <tbody>
-                <h3>Album: att</h3>
+               
                 @foreach($musics as $music)
-                
+
                     <tr>
                         <th scope="row"> {{$loop->index + 1}}</th>
                         <td>{{$music->title}}</td>
                         <td>
                             <a href="/edit/{{$music->id}}" class="btn btn-info edit-btn"> <ion-icons name="create-ouyline"></ion-icons> Editar</a>
-                         
+
                         </td>
                         <td>   <form action="/{{$music->id}}" method="POST">
                             @csrf
@@ -77,7 +94,7 @@
 
                         </form></td>
                         <td id="duracao">
-                            
+
                         </td>
                         <td>{{$music->duration}}</td>
                     </tr>
@@ -86,8 +103,8 @@
             </tbody>
         </table>
     @else
-        <p>Você ainda não possui eventos, <a href="/events/create">Criar Evento</a></p>
-    @endif 
+        <p>Você ainda não possui Músicas e nem Álbuns, <a href="/create">Criar Música</a> e <a href="/create/album">Criar Álbum</a></p>
+    @endif
 
  </div>
 

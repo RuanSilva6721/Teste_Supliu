@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Criar Eventos')
+@section('title', 'Criar Músicas')
 
 @section('content')
 
@@ -25,7 +25,7 @@
         </select>
     </div> --}}
     
-    <input type="submit" class="btn btn-primary" value="Criar Evento">
+    <input type="submit" class="btn btn-primary" value="Criar Música">
     </form>
 </div>
 

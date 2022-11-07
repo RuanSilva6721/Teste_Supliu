@@ -26,7 +26,7 @@
         </select>
     </div> --}}
 
-    <input type="submit" class="btn btn-primary" value="Atualizar Evento">
+    <input type="submit" class="btn btn-primary" value="Atualizar Música">
     </form>
 </div>
 

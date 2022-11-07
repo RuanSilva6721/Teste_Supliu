@@ -19,6 +19,28 @@ class AlbumController extends Controller
 
         return redirect('/')->with('msg', 'Àbum criando com sucesso!');
     }
+    public function edit($id)
+    {
+        $album = Album::findOrFail($id);
+
+        return view('music.editalbum', ['album' =>$album]);
+    }
+    public function update(Request $request, Album $album)
+    {
+        $data = $request->all();
+
+        Album::findOrFail($request->id)->update($data);
+
+
+        return redirect('/')->with('msg', "Album editado com sucesso!");
+    }
+
+    public function destroy($id)
+    {
+        Album::findOrFail($id)->delete();
+
+        return redirect('/')->with('msg', "Album excluido com sucesso!");
+    }
 
 
 }
