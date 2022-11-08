@@ -44,7 +44,9 @@ class MusicController extends Controller
 
     public function store(Request $request)
     {
+//dd($request);
         Music::create($request->all());
+        //$music = $request->title;
 
         return redirect('/')->with('msg', 'Música criando com sucesso!');
 

@@ -12,7 +12,7 @@ class Music extends Model
 
    protected $table = 'music';
 
-    protected $fillable = ['id', 'title', 'duration'];
+    protected $fillable = ['id', 'title', 'duration', 'album_id'];
 
     public function Album()
     {

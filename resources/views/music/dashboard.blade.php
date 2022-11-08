@@ -106,7 +106,7 @@
      @endforeach
 
     @else
-        <p>Você ainda não possui Músicas e nem Álbuns, <a href="/create">Criar Música</a> e <a href="/create/album">Criar Álbum</a></p>
+        <p>Você ainda não possui Álbuns,  <a href="/create/album">Criar Álbum</a></p>
     @endif
 
  </div>
