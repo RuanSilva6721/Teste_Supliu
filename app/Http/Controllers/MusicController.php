@@ -17,27 +17,28 @@ class MusicController extends Controller
     {
 
         $search = request('search');
-        $album = Album::all();
+
 
         if($search){
 
-             $musics = Music::where([
+             $album = Album::where([
 
-                 ['title', 'like', '%'.$search. '%']
+                 ['Nome', 'like', '%'.$search. '%']
 
              ])->get();
 
         }else{
-             $musics = Music::all();
+            $album = Album::all();
         }
 
-        return  view('music.dashboard', [ "search" => $search, 'musics' => $musics, 'album' => $album ]);
+        return  view('music.dashboard', [ "search" => $search, 'album' => $album ]);
     }
 
 
     public function create()
     {
-        return view('music.create');
+        $album = Album::all();
+        return view('music.create', ['album' => $album]);
     }
 
 
@@ -46,7 +47,7 @@ class MusicController extends Controller
         Music::create($request->all());
 
         return redirect('/')->with('msg', 'Música criando com sucesso!');
-       
+
     }
 
     /**

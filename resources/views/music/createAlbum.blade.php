@@ -10,9 +10,9 @@
         @csrf
     <div class="form-group">
         <label for="nome">Nome da Álbum</label>
-        <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do Álbum">
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do Álbum" required>
     </div>
-    
+
     <input type="submit" class="btn btn-primary" value="Criar Evento">
     </form>
 </div>

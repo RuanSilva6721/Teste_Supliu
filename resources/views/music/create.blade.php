@@ -10,21 +10,22 @@
         @csrf
     <div class="form-group">
         <label for="title">Nome da Música</label>
-        <input type="text" class="form-control" id="title" name="title" placeholder="Nome do música">
+        <input type="text" class="form-control" id="title" name="title" placeholder="Nome do música" required>
     </div>
     <div class="form-group">
         <label for="duration">Duração</label>
-        <input type="text" class="form-control" id="duration" name="duration" placeholder="00:00">
+        <input type="text" class="form-control" id="duration" name="duration" placeholder="00:00" required>
     </div>
 
-    {{-- <div class="form-group">
-        <label for="private">O evento é privado?</label>
-        <select name="private" id="private" class="form-control"> 
-            <option value="0">Não</option>
-            <option value="1">Sim</option>
+    <div class="form-group">
+        <label for="album_id">O Album essa música pertence?</label>
+        <select name="album_id" id="album_id" class="form-control">
+            @foreach($album as $item)
+            <option value="<?= $item->id?>"><?= $item->nome?></option>
+            @endforeach
         </select>
-    </div> --}}
-    
+    </div>
+
     <input type="submit" class="btn btn-primary" value="Criar Música">
     </form>
 </div>

@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Album;
 use Illuminate\Http\Request;
+use App\Models\Music;
 
 class AlbumController extends Controller
 {
 
     public function create()
     {
+
         return view('music.createAlbum');
     }
 
@@ -37,7 +39,10 @@ class AlbumController extends Controller
 
     public function destroy($id)
     {
+        Music::where('album_id', $id)->delete();
+
         Album::findOrFail($id)->delete();
+
 
         return redirect('/')->with('msg', "Album excluido com sucesso!");
     }
