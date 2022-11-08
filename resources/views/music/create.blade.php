@@ -5,7 +5,12 @@
 @section('content')
 
 <h1>Crie uma Música</h1>
+
+
 <div id="event-create-container" class="col-md-6 offset-md-3">
+    <div id="obs">
+        <p>Observação: Você so pode adicionar uma música dentro de um Álbum. Nesse sentido, caso não tenha um álbum, você deve criar uma album primeiro antes de criar a música. <a href="/create/album">Criar Álbum</a></p></p>
+    </div>
     <form action="/music" method="POST" enctype="multipart/form-data">
         @csrf
     <div class="form-group">
@@ -28,6 +33,8 @@
 
     <input type="submit" class="btn btn-primary" value="Criar Música">
     </form>
+
+
 </div>
 
 @endsection

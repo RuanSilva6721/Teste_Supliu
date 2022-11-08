@@ -6,7 +6,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-   
+
 
 }
 
@@ -27,13 +27,13 @@ header{
 }
 .container-fluid{
     padding: 0;
-    
+
 }
 
 
 
 .btn-primary{
-   
+
     width: 110px;
     height: 50px;
     border-radius: 10px;
@@ -147,4 +147,11 @@ header{
 .faixa ul li {
 	list-style-type: none;
     padding-right: 14px;
+}
+#obs{
+    margin-bottom: 15px;
+    margin-top: 15px;
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
 }
