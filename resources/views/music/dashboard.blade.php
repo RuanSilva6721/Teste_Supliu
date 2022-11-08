@@ -46,8 +46,10 @@
         @endif
 
 
-     @if(count($musics) > 0 || count($album) > 0)
+     @if(count($album) > 0)
      @foreach($album as $item)
+
+
      <div class="faixa">
      <ul >
         <li><h3>Album: {{$item->nome}}</h3></li>
@@ -60,48 +62,49 @@
          </form></li>
 
      </ul>
-    </div>
-       
-            
-     @endforeach
-        <table class="table">
-            <thead>
+
+     <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nº</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Deletar</th>
+                <th scope="col">duração</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach($item->Music() as $music)
                 <tr>
-                    <th scope="col">Nº</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Editar</th>
-                    <th scope="col">Deletar</th>
-                    <th scope="col">duração</th>
+                    <th scope="row"> {{$loop->index + 1}}</th>
+                    <td>{{$music->title}}</td>
+                    <td>
+                        <a href="/edit/{{$music->id}}" class="btn btn-info edit-btn"> <ion-icons name="create-ouyline"></ion-icons> Editar</a>
+
+                    </td>
+                    <td>   <form action="/{{$music->id}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+
+                        <button type="submit" class="btn btn-danger delete-btn"> <ion-icons name="trash-outline"></ion-icons> Deletar</button>
+
+
+                    </form></td>
+                    <td id="duracao">
+
+                    </td>
+                    <td>{{$music->duration}}</td>
                 </tr>
-            </thead>
-            <tbody>
-               
-                @foreach($musics as $music)
 
-                    <tr>
-                        <th scope="row"> {{$loop->index + 1}}</th>
-                        <td>{{$music->title}}</td>
-                        <td>
-                            <a href="/edit/{{$music->id}}" class="btn btn-info edit-btn"> <ion-icons name="create-ouyline"></ion-icons> Editar</a>
-
-                        </td>
-                        <td>   <form action="/{{$music->id}}" method="POST">
-                            @csrf
-                            @method('DELETE')
-
-                            <button type="submit" class="btn btn-danger delete-btn"> <ion-icons name="trash-outline"></ion-icons> Deletar</button>
+            @endforeach
+        </tbody>
+    </table>
+    </div>
 
 
-                        </form></td>
-                        <td id="duracao">
+     @endforeach
 
-                        </td>
-                        <td>{{$music->duration}}</td>
-                    </tr>
-
-                @endforeach
-            </tbody>
-        </table>
     @else
         <p>Você ainda não possui Músicas e nem Álbuns, <a href="/create">Criar Música</a> e <a href="/create/album">Criar Álbum</a></p>
     @endif

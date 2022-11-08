@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Music;
 
 class Album extends Model
 {
@@ -12,4 +13,10 @@ class Album extends Model
 
     protected $fillable = ['id', 'nome'];
 
+
+
+
+    public function Music(){
+        return $this->hasMany(Music::class)->get();
+    }
 }
