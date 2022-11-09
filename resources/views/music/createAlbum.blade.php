@@ -13,7 +13,7 @@
         <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do Álbum" required>
     </div>
 
-    <input type="submit" class="btn btn-primary" value="Criar Evento">
+    <input type="submit" class="btn btn-primary" value="Criar Álbum">
     </form>
 </div>
 
